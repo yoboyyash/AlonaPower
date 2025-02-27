@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/AP_SVG_3_TAB_TITLE.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALONA WORLD</title>
+    <style>
+      /* Ensures the root container centers content properly */
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        overflow: hidden;
+      }
+      
+      /* Background video container */
+      .background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Sends video behind content */
+      }
+
+      #root {
+        width: 100%;
+        max-width: 6144px; /* Keeps layout centered within a reasonable width */
+        margin: 0 auto;
+        position: relative;
+        z-index: 1; /* Ensures React content appears above the video */
+      }
+    </style>
+    <script type="module" crossorigin src="/AlonaPower/assets/index-CNHcjSyh.js"></script>
+    <link rel="stylesheet" crossorigin href="/AlonaPower/assets/index-sG8jPrUf.css">
+  </head>
+  <body>
+    <!-- Background Video Element -->
+    <video 
+      class="background-video" 
+      src="/AlonaPower/assets/videos/AP1mp4.mp4" 
+      muted 
+      autoplay 
+      loop 
+      playsinline>
+    </video>
+
+    <div id="root"></div>
+    
+  </body>
+</html>
