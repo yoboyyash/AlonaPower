@@ -10,7 +10,7 @@ import './css/App.css';
 
 function App() {
   return (
-    <Router>   
+    <Router basename="/AlonaPower">   
       
       <Navbar />
         

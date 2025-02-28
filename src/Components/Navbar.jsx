@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-b-2xl  
+      className={`w-full text-black fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-b-2xl  
         ${isScrolled ? "py-2 shadow-md" : "py-4"} 
         ${darkMode ? "bg-gray-900/75 text-white " : "bg-gradient-to-r from-pink-400/40 via-purple-500/50 to-blue-400/40 "} `}
     >
