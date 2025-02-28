@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './Components/Home.jsx';
-import AboutMe from './Components/AboutMe.jsx';
-import Navbar from './Components/Navbar.jsx';
-import Projects from './Components/Projects.jsx';
-import Contact from './Components/ContactForm.jsx';
+import Home from './components/Home.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import Navbar from './components/Navbar.jsx';
+import Projects from './components/Projects.jsx';
+import Contact from './components/ContactForm.jsx';
 
 import './css/App.css';
 
 
 function App() {
   return (
-    <Router>   
+    <Router basename="/AlonaPower">   
       
       <Navbar />
         
