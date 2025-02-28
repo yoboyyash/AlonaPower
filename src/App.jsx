@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './components/Home.jsx';
-import AboutMe from './components/AboutMe.jsx';
-import Navbar from './components/Navbar.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/ContactForm.jsx';
+import Home from './components/Home';
+import AboutMe from './components/AboutMe';
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
+import ContactForm from './components/ContactForm';
 
 import './css/App.css';
 
 
 function App() {
   return (
-    <Router basename="/AlonaPower">   
+    <Router>   
       
       <Navbar />
         
@@ -18,11 +18,11 @@ function App() {
 
           <Route path="/" element={<Home />} />
 
-          <Route path="/aboutMe" element={<AboutMe />} />
+          <Route path="/about-me" element={<AboutMe />} />
 
           <Route path="/projects" element={<Projects />} />
 
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactForm />} />
 
         </Routes>
     
