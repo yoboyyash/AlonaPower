@@ -10,7 +10,7 @@ export default defineConfig({
     tailwindcss(),
   ],
 
-  base: '/AlonaPower/',
+  base: './',
   
   resolve: {
     extensions: ['.js', '.jsx'], // Ensure JSX is recognized
