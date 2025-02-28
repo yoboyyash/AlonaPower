@@ -10,7 +10,6 @@ export default defineConfig({
     tailwindcss(),
   ],
 
-  base: './',
   
   resolve: {
     extensions: ['.js', '.jsx'], // Ensure JSX is recognized
