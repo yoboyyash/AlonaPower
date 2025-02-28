@@ -4,9 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/AlonaPower/",
+  
   plugins: [
     react(),
     tailwindcss(),
   ],
+
+  base: '/AlonaPower/',
+  
+  resolve: {
+    extensions: ['.js', '.jsx'], // Ensure JSX is recognized
+  },
 });
