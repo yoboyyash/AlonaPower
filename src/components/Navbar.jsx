@@ -5,7 +5,6 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Me", path: "/aboutMe" },
-  { name: "Camera Roll", path: "/projects" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -29,17 +28,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full text-black fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-b-2xl  
+      className={`w-full text-black fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-b-4xl  
         ${isScrolled ? "py-2 shadow-md" : "py-4"} 
         ${darkMode ? "bg-gray-900/75 text-white " : "bg-gradient-to-r from-pink-400/40 via-purple-500/50 to-blue-400/40 "} `}
     >
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className={`font-extrabold text-yellow-300 px-3 py-1 rounded-lg hover:bg-pink-500/70 hover:scale-120 transition-transform duration-300 ${isScrolled ? 'text-2xl' : 'text-4xl'}`}>Alona World</h1>
+        {/* Logo with Link to Home */}
+        <Link to="/">
+          <h1 className={`font-extrabold text-yellow-300 px-3 py-1 rounded-lg hover:bg-pink-500/70 hover:scale-130 transition-transform duration-300 ${isScrolled ? 'text-2xl' : 'text-4xl'}`}>Alona World</h1>
+        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 text-lg font-serif">
+        <div className="ml-10 hidden md:flex space-x-6 text-2xl font-serif">
           {navLinks.map((link) => (
             <Link
               key={link.path}
