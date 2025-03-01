@@ -22,9 +22,9 @@ export default function Footer() {
     >
       {!hovered ? (
         <div className="flex items-center mb-6 text-yellow-300 cursor-pointer">
-          <span className="text-xs mx-1 mt-6">Y</span>
+          <span className="text-xs mx-1 mt-6">A</span>
           <FaHeart className="text-red-500 outline-2 outline-black py-1 text-4xl mx-1" />
-          <span className="text-xs mx-1 mt-6">B</span>
+          <span className="text-xs mx-1 mt-6">P</span>
         </div>
       ) : (
         <footer
