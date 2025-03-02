@@ -1,23 +1,13 @@
-const aboutMe = () => {
-    const aboutMe = [
-      { title: "aboutMe 1", description: "A cool aboutMe.", link: "#" },
-      { title: "aboutMe 2", description: "Another cool aboutMe.", link: "#" },
-    ];
-  
-    return (
-      <section className="p-10">
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <div className="grid gap-4">
-          {aboutMe.map((proj, index) => (
-            <div key={index} className="p-4 border rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold">{proj.title}</h3>
-              <p>{proj.description}</p>
-              <a href={proj.link} className="text-blue-500">About Me</a>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  };
-  
-  export default aboutMe;
+// Updated AboutMe.jsx
+import React from 'react';
+
+const AboutMe = () => {
+  return (
+    <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-pink-300 via-purple-400 to-blue-300 p-10">
+      <h1 className="text-5xl font-bold text-yellow-300 drop-shadow-lg">Alona Power</h1>
+      <p className="text-2xl text-white mt-4 italic">Hi, coming soon<span className='text-red-700/30'>.</span><span className='text-red-700/40'>.</span><span className='text-red-700/50'>.</span><span className='text-red-700/70'>xoxo</span></p>
+    </section>
+  );
+};
+
+export default AboutMe;
