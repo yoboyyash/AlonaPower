@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark");
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // Get current route
 
   useEffect(() => {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
@@ -26,6 +27,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top smoothly
+    }
+  };
+
   return (
     <nav
       className={`w-full md:w-2/3 fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-b-2xl text-black
@@ -34,14 +41,16 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo with Link to Home */}
-        <Link to="/">
-          <h1 className={`font-extrabold text-yellow-300 px-3 py-1 rounded-lg hover:bg-pink-500/70 hover:scale-110 transition-transform duration-300 ${isScrolled ? 'text-2xl' : 'text-4xl'}`}> 
+        <Link to="/" onClick={handleLogoClick}>
+          <h1
+            className={`font-extrabold text-yellow-300 px-3 py-1 rounded-lg hover:bg-pink-500/70 hover:scale-110 transition-transform duration-300 ${isScrolled ? 'text-2xl' : 'text-4xl'}`}
+          > 
             Alona World 
           </h1>
         </Link>
 
         {/* Desktop Menu (Hidden on Mobile) */}
-        <div className="hidden md:flex items-center space-x-6 text-xl text-center font-serif">
+        <div className="hidden md:flex flex-1 justify-end items-center space-x-6 text-xl text-center font-serif mr-4">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -84,6 +93,7 @@ export default function Navbar() {
           <Link
             key={link.path}
             to={link.path}
+            onClick={() => setIsOpen(false)}
             className="block text-lg py-3 px-4 rounded font-serif hover:bg-pink-500 hover:scale-110 transition-transform duration-300"
           >
             {link.name}
