@@ -40,8 +40,8 @@ export default function Navbar() {
           </h1>
         </Link>
 
-        {/* Desktop Menu with Dark Mode Toggle */}
-        <div className="hidden md:flex items-center space-x-6 text-xl text-center font-serif ml-auto">
+        {/* Desktop Menu (Hidden on Mobile) */}
+        <div className="hidden md:flex items-center space-x-6 text-xl text-center font-serif">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -51,26 +51,34 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="ml-4 p-2 rounded-full transition-transform duration-300 hover:scale-110"
-          >
-            {darkMode ? <Sun size={24} className="text-yellow-500" /> : <Moon size={24} className="text-white" />}
-          </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Right-Aligned Icons (ALWAYS VISIBLE) */}
+        <div className="flex items-center space-x-4">
+          {/* Dark Mode Toggle (ALWAYS IN NAVBAR) */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded-full transition-transform duration-300 hover:scale-110"
+          >
+            {darkMode ? (
+              <Sun size={24} className="text-yellow-500" />
+            ) : (
+              <Moon size={24} className="text-white" /> 
+            )}
+          </button>
+
+          {/* Mobile Menu Button (Hidden on Desktop) */}
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`absolute top-full left-0 w-full md:hidden bg-white/5 p-4 rounded-2xl shadow-md text-center transition-transform duration-300 
-          ${isOpen ? "block scale-100" : "hidden scale-95"}`}
+          ${isOpen ? "block scale-100" : "hidden scale-95"}
+          ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}
       >
         {navLinks.map((link) => (
           <Link
