@@ -36,8 +36,8 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300 p-10">
-            <h2 className="text-4xl font-bold text-yellow-300 drop-shadow-lg mb-6">Contact Me</h2>
+        <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink-300 via-purple-400 to-blue-300 p-10">
+            <h2 className="text-4xl font-bold text-yellow-300 drop-shadow-lg mb-6">Touch Base</h2>
             <form onSubmit={onSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg space-y-4 outline-3 outline-black">
                 <input 
                     name="name" 
